@@ -17,7 +17,7 @@ const Button: React.FunctionComponent<Props> = ({title, onPress, style}) => (
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.foxtrot,
+    backgroundColor: colors.darkCharlie,
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     minWidth: 60,
   },
   buttonText: {
-    color: colors.charlie,
+    color: colors.darkAlpha,
   },
 });
 

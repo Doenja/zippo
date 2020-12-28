@@ -7,15 +7,15 @@ import Room from './containers/Room';
 const App = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="light-content" />
       <SafeAreaView>
         <ScrollView>
           <Room
             title="Living room"
-            color={colors.charlie}
+            color={colors.darkDelta}
             group="living_room"
           />
-          <Room title="Bed room" color={colors.delta} group="bed_room" />
+          <Room title="Bed room" color={colors.darkEcho} group="bed_room" />
         </ScrollView>
       </SafeAreaView>
     </>
