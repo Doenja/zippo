@@ -1,16 +1,8 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-  Dimensions,
-  Switch,
-} from 'react-native';
+import {StyleSheet, Text, View, Dimensions, Switch} from 'react-native';
 import Slider from '@react-native-community/slider';
 
 import {API_HOST} from '@env';
-import Button from '../components/Button';
 import {colors} from '../colors';
 
 type target = 'living_room' | 'bed_room';
@@ -111,8 +103,8 @@ const Room: React.FunctionComponent<Props> = ({title, group, color}) => {
           <Text style={styles.label}>Brightness</Text>
           <Slider
             style={styles.slider}
-            minimumValue={150}
-            maximumValue={500}
+            minimumValue={0}
+            maximumValue={254}
             thumbTintColor={'#fff'}
             maximumTrackTintColor={colors.darkBeta}
             minimumTrackTintColor={'#fff'}
