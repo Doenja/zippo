@@ -1,6 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {HOST} from '@env';
+import {API_HOST} from '@env';
 
 import Button from '../components/Button';
 import {colors} from '../colors';
@@ -19,13 +19,20 @@ const Room: React.FunctionComponent<Props> = ({title, group, color}) => {
   const [brightness, setBrightness] = React.useState<number>();
 
   function onLightSet(setting: setting, value: number | string) {
+    const url = `${API_HOST}/setLights`;
     try {
-      fetch(
-        `${HOST}/setLights?target=${group}&setting=${setting}&value=${value}`,
-        {
-          method: 'POST',
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
-      );
+        body: JSON.stringify({
+          target: group,
+          setting: setting,
+          value: value,
+        }),
+      });
     } catch (err) {
       console.log(err);
     }
